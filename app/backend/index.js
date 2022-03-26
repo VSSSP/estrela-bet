@@ -1,15 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const CompanyRouter = require('./routers/companyRouter');
+const EmployeeRouter = require('./routers/employeeRouter');
 
-const app = express(); // 1
+const app = express();
 app.use(bodyParser.json());
 
-app.get('/', handleHelloWorldRequest); // 2
+app.use('/employee', EmployeeRouter);
+app.use('/company', CompanyRouter);
 
 app.listen(3001, () => {
-  console.log('Aplicação ouvindo na porta 3001');
-}); // 3
-
-function handleHelloWorldRequest(req, res) {
-  res.status(200).send('Hello World!'); // 4
-}
+  console.log('Listening on port: 3001');
+});

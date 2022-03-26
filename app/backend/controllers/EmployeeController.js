@@ -1,4 +1,4 @@
-import EmployeeService from '../services/EmployeeService';
+const EmployeeService = require('../services/EmployeeService');
 
 const getAll = async (_req, res) => {
   const employees = await EmployeeService.getAll();
@@ -11,7 +11,7 @@ const createEmployee = async (req, res) => {
   res.status(200).json(newEmployee);
 };
 
-export default {
+module.exports = {
   getAll,
   createEmployee,
-};
+}

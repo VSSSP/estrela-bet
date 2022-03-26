@@ -1,4 +1,4 @@
-import EmployeesModel from '../models/EmployeesModel';
+const EmployeesModel = require('../models/EmployeesModel');
 
 const getAll = async () => {
   const employees = await EmployeesModel.getAll();
@@ -10,7 +10,7 @@ const createEmployee = async (CPF, name, email, phone, address, company_id) => {
   return newEmployee;
 };
 
-export default {
+module.exports = {
   getAll,
   createEmployee,
 };

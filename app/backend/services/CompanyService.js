@@ -1,4 +1,4 @@
-import CompanyModel from '../models/CompanyModel';
+const CompanyModel = require('../models/CompanyModel');
 
 const getAll = async () => {
   const companies = await CompanyModel.getAll();
@@ -10,7 +10,7 @@ const createCompany = async (CNPJ, name, email, phone, address) => {
   return newCompany;
 };
 
-export default {
+module.exports = {
   getAll,
   createCompany,
 };

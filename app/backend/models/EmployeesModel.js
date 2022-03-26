@@ -1,4 +1,4 @@
-import connection from './connection';
+const connection = require('./connection');
 
 const getAll = async () => {
   const [rows] = await connection.execute('SELECT * FROM Employees');
@@ -12,7 +12,7 @@ const createEmployee = async (CPF, name, email, phone, address, company_id) => {
   return rows;
 };
 
-export default {
+module.exports = {
   getAll,
   createEmployee,
 };

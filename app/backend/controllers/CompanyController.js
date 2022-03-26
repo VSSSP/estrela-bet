@@ -1,4 +1,4 @@
-import CompanyService from '../services/CompanyService';
+const CompanyService = require('../services/CompanyService');
 
 const getAll = async (_req, res) => {
   const companies = await CompanyService.getAll();
@@ -11,7 +11,7 @@ const createCompany = async (req, res) => {
   res.status(200).json(newCompany);
 };
 
-export default {
+module.exports = {
   getAll,
   createCompany,
-};
+}
