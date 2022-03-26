@@ -1,8 +1,10 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express(); // 1
+app.use(bodyParser.json());
 
-app.get('/hello', handleHelloWorldRequest); // 2
+app.get('/', handleHelloWorldRequest); // 2
 
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
