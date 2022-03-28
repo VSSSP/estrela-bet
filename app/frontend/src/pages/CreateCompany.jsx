@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { newCompany } from '../services/request';
+import { regexCNPJ, regexEmail, regexPhone, regexName } from '../services/regex';
 
 export default function CreateCompany () {
   const [state, setState] = useState({});
@@ -18,10 +19,6 @@ export default function CreateCompany () {
   };
 
   const enableButton = () => {
-    const regexCNPJ = /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/;
-    const regexEmail = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
-    const regexPhone = /^1\d\d(\d\d)?$|^0800 ?\d{3} ?\d{4}$|^(\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4}$/gm;
-    const regexName = /^[a-zA-Z\s]+$/;
     if (!regexCNPJ.test(state.CNPJ) || !state.CNPJ) return true;
     if (!state.name || state.name.lenght < 3 || !regexName.test(state.name)) return true;
     if (!regexEmail.test(state.email)) return true;

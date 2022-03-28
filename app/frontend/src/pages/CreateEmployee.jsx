@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { newEmployee } from '../services/request';
+import { regexCPF, regexCel, regexEmail, regexName } from '../services/regex';
 
 export default function CreateEmployee (props) {
   const [state, setState] = useState({
     company_id: props.match.params.id,
   });
+  const [done, setDone] = useState(false);
 
-  console.log(state);
+  if (done) props.history.push("/");
 
   const handleChange = (e) => {
     setState({
@@ -18,18 +19,14 @@ export default function CreateEmployee (props) {
 
   const handleClick = async () => {
     await newEmployee(state);
-    props.history.push("/");
+    setDone(true);
   };
 
   const enableButton = () => {
-    const regexCPF = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
-    const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const regexPhone = /^1\d\d(\d\d)?$|^0800 ?\d{3} ?\d{4}$|^(\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4}$/gm;
-    const regexName = /^[a-zA-Z\s]+$/;
-    if (!regexCPF.test(state.CPF) || !state.CPF) return true;
+    if (!regexCPF.test(state.CPF)) return true;
     if (!state.name || state.name.lenght < 3 || !regexName.test(state.name)) return true;
     if (!regexEmail.test(state.email)) return true;
-    if (!regexPhone.test(state.phone)) return true;
+    if (!regexCel.test(state.phone)) return true;
     if (!state.address) return true;
     return false
   };
