@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import Companies from '../components/Companies';
+// import CreateCompany from '../components/CreateCompany';
 // import Companies from '../components/Companies';
 import MyContext from '../context-api';
 
@@ -10,7 +12,9 @@ export default function Homepage() {
     <div>
       <h1>Companies</h1>
       { companies.map((company) => <Companies company={ company } employees={ employees } /> ) }
-      {/* { state.map((data) => <Companies key={ data.id } company={ data } />) } */}
+      <Link to="/create-company">
+        <button type="button"> Criar nova empresa </button>
+      </Link>
     </div>
   );
 }
