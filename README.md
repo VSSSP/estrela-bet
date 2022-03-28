@@ -1,4 +1,4 @@
-### CRUD Estrela Bet, Processo Seletivo
+### CRud Estrela Bet, Processo Seletivo
 
 --- Em desenvolvimento ---
 
