@@ -1,7 +1,7 @@
 import './App.css';
 import Homepage from './pages/Homepage';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import CreateCompany from './components/CreateCompany';
+import CreateCompany from './pages/CreateCompany';
 
 export default function App() {
   return (

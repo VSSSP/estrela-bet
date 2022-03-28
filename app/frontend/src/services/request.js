@@ -7,4 +7,9 @@ const api = axios.create({
 export const newCompany = async (company) => {
   const newCompany = await api.post('/company', company);
   return newCompany;
-}
+};
+
+export const newEmployee = async (employee) => {
+  const newEmployee = await api.post('/employee', employee);
+  return newEmployee;
+};
