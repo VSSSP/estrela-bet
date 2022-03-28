@@ -11,7 +11,13 @@ const createCompany = async (req, res) => {
   res.status(200).json(newCompany);
 };
 
+const getAllWithEmployees = async (_req, res) => {
+  const companies = await CompanyService.getAllWithEmployees();
+  res.status(200).json(companies);
+};
+
 module.exports = {
   getAll,
   createCompany,
+  getAllWithEmployees,
 }

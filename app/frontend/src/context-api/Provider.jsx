@@ -24,7 +24,7 @@ function Provider({ children }) {
     </MyContext.Provider>
   );
 }
-
+//
 Provider.propTypes = {
   children: PropTypes.node.isRequired,
 };
