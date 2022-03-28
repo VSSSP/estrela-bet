@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { newCompany } from '../services/request';
 import { regexCNPJ, regexEmail, regexPhone, regexName } from '../services/regex';
 
-export default function CreateCompany () {
+export default function CreateCompany (props) {
   const [state, setState] = useState({});
-  console.log(state);
 
   const handleChange = (e) => {
     setState({
@@ -13,9 +12,9 @@ export default function CreateCompany () {
     });
   };
 
-  const handleClick = async (e) => {
-    console.log(state);
+  const handleClick = async () => {
     await newCompany(state);
+    props.history.push('/');
   };
 
   const enableButton = () => {

@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import { newEmployee } from '../services/request';
+import React, { useContext, useState } from 'react';
+import { getAllEmployees, newEmployee } from '../services/request';
 import { regexCPF, regexCel, regexEmail, regexName } from '../services/regex';
+import MyContext from '../context-api';
 
 export default function CreateEmployee (props) {
+  const { setLoading, setEmployees } = useContext(MyContext);
   const [state, setState] = useState({
     company_id: props.match.params.id,
   });
-  const [done, setDone] = useState(false);
-
-  if (done) props.history.push("/");
 
   const handleChange = (e) => {
     setState({
@@ -19,7 +18,11 @@ export default function CreateEmployee (props) {
 
   const handleClick = async () => {
     await newEmployee(state);
-    setDone(true);
+    setLoading(true);
+    const response = await getAllEmployees();
+    setEmployees(response);
+    setLoading(false);
+    props.history.push("/");
   };
 
   const enableButton = () => {
