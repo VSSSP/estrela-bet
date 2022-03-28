@@ -4,7 +4,9 @@ import MyContext from '.';
 
 function Provider({ children }) {
   const URL = 'http://localhost:3001/';
-  const [state, setState] = useState([]);
+  // const [state, setState] = useState([]);
+  const [companies, setCompanies] = useState([]);
+  const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -12,14 +14,25 @@ function Provider({ children }) {
     const companies = async () => {
     const response = await fetch(`${URL}company`)
       .then((res) => res.json())
-    setState(response);
+    setCompanies(response);
     setLoading(false);
     }
     companies();
   }, []);
 
+  useEffect(() => {
+    setLoading(true);
+    const employees = async () => {
+    const response = await fetch(`${URL}employee`)
+      .then((res) => res.json())
+    setEmployees(response);
+    setLoading(false);
+    }
+    employees();
+  }, []);
+
   return (
-    <MyContext.Provider value={{ state, loading }}>
+    <MyContext.Provider value={{ companies, employees, loading }}>
       {children}
     </MyContext.Provider>
   );

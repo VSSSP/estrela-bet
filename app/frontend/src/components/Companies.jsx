@@ -1,16 +1,15 @@
 import React from 'react';
+import Employees from './Employees';
 
-export default function Companies ({ company: companyAndEmployeesInfo }) {
-  console.log(companyAndEmployeesInfo);
+export default function Companies ({ company, employees }) {
+  const employessByCompany = employees.filter((employee) => employee.company_id === company.id);
+  console.log(employessByCompany);
   return (
     <div>
-      <h1>{ companyAndEmployeesInfo.Company }</h1>
+      <h1>{ company.name }</h1>
       {/* dados do colaborador: */}
-      <p>{ companyAndEmployeesInfo.name }</p>
-      <p>{ companyAndEmployeesInfo.email }</p>
-      <p>{ companyAndEmployeesInfo.phone }</p>
-      <p>{ companyAndEmployeesInfo.address }</p>
-      <p>{ companyAndEmployeesInfo.CPF }</p>
+      <h3>Colaboradores:</h3>
+      { employessByCompany.map((employee) => <Employees key={ employee.id } employee={ employee } /> ) }
     </div>
   )
 }

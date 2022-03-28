@@ -25,7 +25,6 @@ const getEmployeesFromCompany = async (companyId) => {
   const query = `SELECT e.CPF, e.name, e.email, e.phone, e.address, c.name AS Company FROM Company as c
     INNER JOIN Employees AS e ON e.company_id = c.id WHERE c.id = ?`;
   const [rows] = await connection.execute(query, [companyId]);
-  console.log(rows);
   return rows;
 };
 
