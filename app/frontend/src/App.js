@@ -1,5 +1,4 @@
 import './App.css';
-import Provider from './context-api/Provider';
 import Homepage from './pages/Homepage';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import CreateCompany from './components/CreateCompany';
