@@ -1,9 +1,21 @@
 version: '3'
 
 services:
+  frontend:
+    build: ./frontend
+    ports: 
+      - '3000:3000'
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: always
+    healthcheck:
+      test: ["CMD", "lsof", "-t", "-i:3000"]  # Caso utilize outra porta interna para o front, altere ela aqui também
+      timeout: 10s
+      retries: 5
+
   backend:
     build: ./backend
-    command: npm run start
     ports:
       - '3001:3001'
     depends_on:
@@ -34,7 +46,7 @@ services:
       - '3308:3306'
     restart: always
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"] # Deve aguardar o banco ficar operacional
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 10s
       retries: 5
     cap_add:

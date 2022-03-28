@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "compose:up": "(docker-compose up -d --build)",
-    "compose:down": "(docker-compose down --remove-orphans)"
+    "compose:up": "(cd app docker-compose up -d --build)",
+    "compose:down": "(cd app docker-compose down --remove-orphans)"
   },
   "author": "VSSSP",
   "devDependencies": {
