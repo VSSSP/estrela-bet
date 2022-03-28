@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { newCompany } from '../services/request';
 import { regexCNPJ, regexEmail, regexPhone, regexName } from '../services/regex';
 

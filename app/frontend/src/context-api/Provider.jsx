@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import MyContext from '.';
+import { getAllCompanies, getAllEmployees } from '../services/request';
 
 function Provider({ children }) {
-  const URL = 'http://localhost:3001/';
-  // const [state, setState] = useState([]);
   const [companies, setCompanies] = useState([]);
   const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,10 +11,9 @@ function Provider({ children }) {
   useEffect(() => {
     setLoading(true);
     const companies = async () => {
-    const response = await fetch(`${URL}company`)
-      .then((res) => res.json())
-    setCompanies(response);
-    setLoading(false);
+      const response = await getAllCompanies();
+      setCompanies(response);
+      setLoading(false);
     }
     companies();
   }, []);
@@ -23,10 +21,9 @@ function Provider({ children }) {
   useEffect(() => {
     setLoading(true);
     const employees = async () => {
-    const response = await fetch(`${URL}employee`)
-      .then((res) => res.json())
-    setEmployees(response);
-    setLoading(false);
+      const response = await getAllEmployees();
+      setEmployees(response);
+      setLoading(false);
     }
     employees();
   }, []);
