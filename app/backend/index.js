@@ -2,6 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const CompanyRouter = require('./routers/companyRouter');
 const EmployeeRouter = require('./routers/employeeRouter');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
@@ -9,6 +12,8 @@ app.use(bodyParser.json());
 app.use('/employee', EmployeeRouter);
 app.use('/company', CompanyRouter);
 
-app.listen(3001, () => {
-  console.log('Listening on port: 3001');
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`ESCUTANDO NA PORTA ${PORT}`);
 });
