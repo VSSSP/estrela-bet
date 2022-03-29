@@ -63,3 +63,11 @@ Caso a rota seja /company:
 ------------------
 
 ### Para finalizar as aplicações, rode o comando `npm run compose:down`
+
+-----------------
+
+### Desenvolvimento:
+
+- No backend, o banco de dados é feito através do docker, utilizando a imagem do mysql. O banco de dados é consumido pela API criada no express com node.js, este define rotas para requisições de criação e visualização. A linguagem utilizada foi o javascript. 
+- No frontend, é criada a interface para consumir a API criada no backend com javascript, html e css, utilizando React. Também foi utilizado o MUI para estilizações.
+- Criei um arquivo docker-compose para subir db, backend e frontend através de apenas um script e também um outro script para instalar todas as dependencias diretamente pela pasta raíz.
