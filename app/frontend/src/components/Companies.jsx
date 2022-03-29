@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 export default function Companies ({ company, employees }) {
   const employeesByCompany = employees.filter((employee) => employee.company_id === company.id);
-  console.log(employeesByCompany.length);
   return (
     <div>
       <h1>{ company.name }</h1>

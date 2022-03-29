@@ -36,11 +36,11 @@ export default function CreateEmployee (props) {
 
   return (
     <div>
-      <input placeholder="074.658.952-27" type="text" name="CPF" onChange={ handleChange } />
-      <input placeholder="Victor de Paula" type="text" name="name" onChange={ handleChange } />
-      <input placeholder="victor@live.com" type="text" name="email" onChange={ handleChange } />
-      <input placeholder="(31) 983516666" type="text" name="phone" onChange={ handleChange } />
-      <input placeholder="Rua do Victor, 123" type="text" name="address" onChange={ handleChange } />
+      CPF: <input placeholder="074.658.952-27" type="text" name="CPF" onChange={ handleChange } />
+      Nome: <input placeholder="Victor de Paula" type="text" name="name" onChange={ handleChange } />
+      E-mail: <input placeholder="victor@live.com" type="text" name="email" onChange={ handleChange } />
+      Telefone: <input placeholder="(31) 983516666" type="text" name="phone" onChange={ handleChange } />
+      Endereço: <input placeholder="Rua do Victor, 123" type="text" name="address" onChange={ handleChange } />
       <button disabled={ enableButton() }type="button" onClick={ handleClick }> Inserir novo colaborador </button>
     </div>
   )

@@ -1,17 +1,19 @@
 import React from 'react';
 
 export default function Employees ({ employee }) {
-  console.log(employee);
+  const employees = [
+    `Nome: ${employee.name}`,
+    `E-mail: ${employee.email}`,
+    `Telefone: ${employee.phone}`,
+    `Endereço: ${employee.address}`,
+    `CPF: ${employee.CPF}`,
+  ];
+
   return (
     <div>
       {/* dados do colaborador: */}
-
-      <p>{ employee.name }</p>
-      <p>{ employee.email }</p>
-      <p>{ employee.phone }</p>
-      <p>{ employee.address }</p>
-      <p>{ employee.CPF }</p>
-      ------------------------
+      { employees.map((emp) => <p key={ emp.id }>{ emp }</p> ) }
+      <br/>
     </div>
   )
 }

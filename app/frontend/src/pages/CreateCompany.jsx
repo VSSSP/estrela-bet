@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { newCompany } from '../services/request';
+import React, { useContext, useState } from 'react';
+import { getAllCompanies, newCompany } from '../services/request';
 import { regexCNPJ, regexEmail, regexPhone, regexName } from '../services/regex';
+import MyContext from '../context-api';
 
 export default function CreateCompany (props) {
+  const { setLoading, setCompanies } = useContext(MyContext);
   const [state, setState] = useState({});
 
   const handleChange = (e) => {
@@ -14,6 +16,10 @@ export default function CreateCompany (props) {
 
   const handleClick = async () => {
     await newCompany(state);
+    setLoading(true);
+    const response = await getAllCompanies();
+    setCompanies(response);
+    setLoading(false);
     props.history.push('/');
   };
 

@@ -29,7 +29,7 @@ function Provider({ children }) {
   }, []);
 
   return (
-    <MyContext.Provider value={{ companies, employees, loading, setLoading, setEmployees }}>
+    <MyContext.Provider value={{ companies, employees, loading, setLoading, setEmployees, setCompanies }}>
       {children}
     </MyContext.Provider>
   );
