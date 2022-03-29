@@ -1,6 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { getAllEmployees, newEmployee } from '../services/request';
 import { regexCPF, regexPhone, regexEmail, regexName } from '../services/regex';
+import '../styles/CreateCompOrEmp.css';
+import SendIcon from '@mui/icons-material/Send';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import MyContext from '../context-api';
 
 export default function CreateEmployee (props) {
@@ -35,13 +39,13 @@ export default function CreateEmployee (props) {
   };
 
   return (
-    <div>
-      CPF: <input placeholder="074.658.952-27" type="text" name="CPF" onChange={ handleChange } />
-      Nome: <input placeholder="Victor de Paula" type="text" name="name" onChange={ handleChange } />
-      E-mail: <input placeholder="victor@live.com" type="text" name="email" onChange={ handleChange } />
-      Telefone: <input placeholder="(31) 983516666" type="text" name="phone" onChange={ handleChange } />
-      Endereço: <input placeholder="Rua do Victor, 123" type="text" name="address" onChange={ handleChange } />
-      <button disabled={ enableButton() }type="button" onClick={ handleClick }> Inserir novo colaborador </button>
+    <div className="insertNew">
+      <TextField margin="dense" id="outlined-basic" label="CPF, ex: 074.658.952-27" variant="outlined" type="text" name="CPF" onChange={ handleChange } />
+      <TextField margin="dense" id="outlined-basic" label="Nome" variant="outlined" type="text" name="name" onChange={ handleChange } />
+      <TextField margin="dense" id="outlined-basic" label="E-mail" variant="outlined" type="text" name="email" onChange={ handleChange } />
+      <TextField margin="dense" id="outlined-basic" label="Telefone, ex: 31 998477366" variant="outlined" type="text" name="phone" onChange={ handleChange } />
+      <TextField margin="dense" id="outlined-basic" label="Endereço" variant="outlined" type="text" name="address" onChange={ handleChange } />
+      <Button onClick={ handleClick } disabled={ enableButton() } variant="outlined" endIcon={<SendIcon />}>Inserir</Button>
     </div>
   )
 }
