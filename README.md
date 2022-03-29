@@ -3,7 +3,7 @@ Aplicação para visualizar e cadastrar empresas e/ou funcionarios
 
 -----------
 
-### Com docker e o mysql instalados, rodar os seguintes comandos:
+### Necessário ter docker e node.js instalados
 
 Iniciar o docker: `sudo service docker start`
 
