@@ -10,11 +10,6 @@ const createCompany = async (CNPJ, name, email, phone, address) => {
   return newCompany;
 };
 
-const getAllWithEmployees = async () => {
-  const companies = await CompanyModel.getAllWithEmployees();
-  return companies;
-};
-
 module.exports = {
   getAll,
   createCompany,

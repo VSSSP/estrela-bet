@@ -10,7 +10,7 @@ export default function Homepage() {
 
   return (
     <div>
-      <h1>Companies</h1>
+      <h1>Empresas</h1>
       { companies.map((company) => <Companies company={ company } employees={ employees } /> ) }
       <Link to="/create-company">
         <button type="button"> Criar nova empresa </button>
