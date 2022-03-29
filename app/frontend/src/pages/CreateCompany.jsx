@@ -37,7 +37,7 @@ export default function CreateCompany (props) {
       CNPJ: <input placeholder="00.050.000/0001-91" type="text" name="CNPJ" onChange={ handleChange } />
       Nome: <input placeholder="Banco Bradesco" type="text" name="name" onChange={ handleChange } />
       E-mail: <input placeholder="bradesco@bradesco.com.br" type="text" name="email" onChange={ handleChange } />
-      Telefone: <input placeholder="4002 0022" type="text" name="phone" onChange={ handleChange } />
+      Telefone: <input placeholder="(DDD)40044000" type="text" name="phone" onChange={ handleChange } />
       Endereço: <input placeholder="Rua do bradesco" type="text" name="address" onChange={ handleChange } />
       <button disabled={ enableButton() }type="button" onClick={ handleClick }> Criar nova empresa </button>
     </div>

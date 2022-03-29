@@ -11,7 +11,14 @@ const createCompany = async (req, res) => {
   res.status(200).json(newCompany);
 };
 
+const getCompanyById = async (req, res) => {
+  const { id } = req.params;
+  const company = await CompanyService.getCompanyById(id);
+  res.status(200).json(company);
+};
+
 module.exports = {
   getAll,
   createCompany,
+  getCompanyById,
 }

@@ -11,7 +11,14 @@ export default function Homepage() {
   return (
     <div>
       <h1>Empresas</h1>
-      { companies.map((company) => <Companies company={ company } employees={ employees } /> ) }
+      { companies.map((company) => { 
+        return (
+      <Link to={`/companies/${company.id}`}>
+        <Companies company={ company } employees={ employees } /> 
+      </Link>
+        )
+      }) }
+
       <Link to="/create-company">
         <button type="button"> Criar nova empresa </button>
       </Link>

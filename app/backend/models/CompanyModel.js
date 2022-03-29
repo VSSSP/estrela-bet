@@ -12,7 +12,13 @@ const createCompany = async (CNPJ, name, email, phone, address) => {
   return rows;
 };
 
+const getCompanyById = async (id) => {
+  const [rows] = await connection.execute('SELECT * FROM Company WHERE id = ?', [id]);
+  return rows;
+};
+
 module.exports = {
   getAll,
   createCompany,
+  getCompanyById,
 };

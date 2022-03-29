@@ -10,7 +10,13 @@ const createCompany = async (CNPJ, name, email, phone, address) => {
   return newCompany;
 };
 
+const getCompanyById = async (id) => {
+  const company = await CompanyModel.getCompanyById(id);
+  return company;
+};
+
 module.exports = {
   getAll,
   createCompany,
+  getCompanyById,
 };
