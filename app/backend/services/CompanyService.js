@@ -13,5 +13,4 @@ const createCompany = async (CNPJ, name, email, phone, address) => {
 module.exports = {
   getAll,
   createCompany,
-  getAllWithEmployees,
 };
