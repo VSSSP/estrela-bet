@@ -10,7 +10,7 @@ export default function Employees ({ employee }) {
   ];
 
   return (
-    <div>
+    <div className="employees">
       {/* dados do colaborador: */}
       { employees.map((emp) => <p key={ emp.id }>{ emp }</p> ) }
       <br/>
