@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { getCompanyById } from '../services/request';
 
 export default function Company({ match }) {
@@ -28,6 +29,9 @@ export default function Company({ match }) {
     <div>
       <h1>{ company.name }</h1>
       { companyInfo.map((info) => <p> { info } </p>) }
+      <Link to={`/create-employee/${company.id}` }>
+          <button type="button"> Inserir novo colaborador </button>
+      </Link>
     </div>
   );
 }

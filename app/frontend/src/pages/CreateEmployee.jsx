@@ -40,12 +40,15 @@ export default function CreateEmployee (props) {
 
   return (
     <div className="insertNew">
-      <TextField margin="dense" id="outlined-basic" label="CPF, ex: 074.658.952-27" variant="outlined" type="text" name="CPF" onChange={ handleChange } />
-      <TextField margin="dense" id="outlined-basic" label="Nome" variant="outlined" type="text" name="name" onChange={ handleChange } />
-      <TextField margin="dense" id="outlined-basic" label="E-mail" variant="outlined" type="text" name="email" onChange={ handleChange } />
-      <TextField margin="dense" id="outlined-basic" label="Telefone, ex: 31 998477366" variant="outlined" type="text" name="phone" onChange={ handleChange } />
-      <TextField margin="dense" id="outlined-basic" label="Endereço" variant="outlined" type="text" name="address" onChange={ handleChange } />
-      <Button onClick={ handleClick } disabled={ enableButton() } variant="outlined" endIcon={<SendIcon />}>Inserir</Button>
+      <div className="createCard">
+        <h2>Criar novo colaborador</h2>
+        <TextField margin="dense" id="outlined-basic" label="CPF, ex: 074.658.952-27" variant="outlined" type="text" name="CPF" onChange={ handleChange } />
+        <TextField margin="dense" id="outlined-basic" label="Nome" variant="outlined" type="text" name="name" onChange={ handleChange } />
+        <TextField margin="dense" id="outlined-basic" label="E-mail" variant="outlined" type="text" name="email" onChange={ handleChange } />
+        <TextField margin="dense" id="outlined-basic" label="Telefone, ex: 31 998477366" variant="outlined" type="text" name="phone" onChange={ handleChange } />
+        <TextField margin="dense" id="outlined-basic" label="Endereço" variant="outlined" type="text" name="address" onChange={ handleChange } />
+        <Button onClick={ handleClick } disabled={ enableButton() } variant="outlined" endIcon={<SendIcon />}>Adicionar</Button>
+      </div>
     </div>
   )
 }
