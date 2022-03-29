@@ -25,3 +25,9 @@ export const getAllEmployees = async () => {
   const employees = await fetch(`${url}employee`).then((res) => res.json());
   return employees;
 };
+
+export const getCompanyById = async (id) => {
+  const company = await fetch(`${url}company/${id}`).then((res) => res.json());
+  return company;
+};
+
