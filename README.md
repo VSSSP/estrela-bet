@@ -2,9 +2,11 @@
 
 --- Em desenvolvimento ---
 
+Com docker e o mysql instalados, rodar os seguintes comandos:
+
 sudo service docker start
 
-rodar npm install no /app e /backend
+npm install no /app, /backend e /frontend
 
 npm run compose:up
 
