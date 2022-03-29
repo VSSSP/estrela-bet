@@ -5,7 +5,11 @@ Aplicação para visualizar e cadastrar empresas e/ou funcionarios
 
 ### Necessário ter docker e node.js instalados
 
+Clonar este repositório;
+
 Iniciar o docker: `sudo service docker start`
+
+Ir para a pasta raiz: `cd estrela-bet`
 
 Instalar dependencias (frontend e backend): `npm run install:apps`
 
