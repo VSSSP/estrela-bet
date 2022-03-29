@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getCompanyById } from '../services/request';
+import '../styles/CreateCompOrEmp.css';
 
 export default function Company({ match }) {
   const [company, setCompany] = useState();
@@ -26,12 +27,18 @@ export default function Company({ match }) {
   ];
 
   return (
-    <div>
-      <h1>{ company.name }</h1>
-      { companyInfo.map((info) => <p> { info } </p>) }
-      <Link to={`/create-employee/${company.id}` }>
+    <div className="insertNew">
+      <div className="createCard">
+        <h1>{ company.name }</h1>
+        { companyInfo.map((info) => <p className="infoEmp"> { info } </p>) }
+        <Link to={`/create-employee/${company.id}` }>
           <button type="button"> Inserir novo colaborador </button>
-      </Link>
+        </Link>
+        <br/>
+        <Link to="/">
+          <button type="button"> Voltar </button>
+        </Link>
+      </div>
     </div>
   );
 }

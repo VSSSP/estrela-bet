@@ -6,6 +6,7 @@ import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import MyContext from '../context-api';
+import { Link } from 'react-router-dom';
 
 export default function CreateEmployee (props) {
   const { setLoading, setEmployees } = useContext(MyContext);
@@ -48,6 +49,10 @@ export default function CreateEmployee (props) {
         <TextField margin="dense" id="outlined-basic" label="Telefone, ex: 31 998477366" variant="outlined" type="text" name="phone" onChange={ handleChange } />
         <TextField margin="dense" id="outlined-basic" label="Endereço" variant="outlined" type="text" name="address" onChange={ handleChange } />
         <Button onClick={ handleClick } disabled={ enableButton() } variant="outlined" endIcon={<SendIcon />}>Adicionar</Button>
+        <br/>
+        <Link className="titleEmpresa" to="/">
+          <Button type="button"> Voltar </Button>
+        </Link>
       </div>
     </div>
   )

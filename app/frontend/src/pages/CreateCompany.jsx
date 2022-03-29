@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import '../styles/CreateCompOrEmp.css';
 import SendIcon from '@mui/icons-material/Send';
+import { Link } from 'react-router-dom';
 
 export default function CreateCompany (props) {
   const { setLoading, setCompanies } = useContext(MyContext);
@@ -46,6 +47,10 @@ export default function CreateCompany (props) {
         <TextField margin="dense" id="outlined-basic" label="Telefone, ex: (31)34556475" variant="outlined" placeholder="(DDD)40044000" type="text" name="phone" onChange={ handleChange } />
         <TextField margin="dense" id="outlined-basic" label="Endereço" variant="outlined" type="text" name="address" onChange={ handleChange } />
         <Button onClick={ handleClick } disabled={ enableButton() } variant="outlined" endIcon={<SendIcon />}>Adicionar</Button>
+        <br/>
+        <Link className="titleEmpresa" to="/">
+          <Button type="button"> Voltar </Button>
+        </Link>
       </div>
     </div>
   )
