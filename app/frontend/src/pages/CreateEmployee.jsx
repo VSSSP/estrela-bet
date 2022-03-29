@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { getAllEmployees, newEmployee } from '../services/request';
-import { regexCPF, regexCel, regexEmail, regexName } from '../services/regex';
+import { regexCPF, regexPhone, regexEmail, regexName } from '../services/regex';
 import MyContext from '../context-api';
 
 export default function CreateEmployee (props) {
@@ -29,7 +29,7 @@ export default function CreateEmployee (props) {
     if (!regexCPF.test(state.CPF)) return true;
     if (!state.name || state.name.lenght < 3 || !regexName.test(state.name)) return true;
     if (!regexEmail.test(state.email)) return true;
-    if (!regexCel.test(state.phone)) return true;
+    if (!regexPhone.test(state.phone)) return true;
     if (!state.address) return true;
     return false
   };
