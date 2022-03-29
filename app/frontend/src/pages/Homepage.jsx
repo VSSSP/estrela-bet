@@ -10,15 +10,17 @@ export default function Homepage() {
   if (loading) return <h1>Loading...</h1>;
 
   return (
-    <div className="homepage">
-      <div className="centerTitles">
-        <h1>Empresas</h1>
-        <Link to="/create-company">
-          <button type="button"> Criar nova empresa </button>
-        </Link>
-      </div>
-      <div className="empresas">
-        { companies.map((company) => <Companies company={ company } employees={ employees } /> ) }
+    <div className="homepageBody">
+      <div className="homepage">
+        <div className="centerTitles">
+          <header>Empresas</header>
+          <Link to="/create-company">
+            <button type="button"> Criar nova empresa </button>
+          </Link>
+        </div>
+        <div className="empresas">
+          { companies.map((company) => <Companies company={ company } employees={ employees } /> ) }
+        </div>
       </div>
     </div>
   );

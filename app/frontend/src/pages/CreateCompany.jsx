@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { getAllCompanies, newCompany } from '../services/request';
 import { regexCNPJ, regexEmail, regexPhone, regexName } from '../services/regex';
 import MyContext from '../context-api';
+import '../styles/CreateCompOrEmp.css';
 
 export default function CreateCompany (props) {
   const { setLoading, setCompanies } = useContext(MyContext);
@@ -33,7 +34,7 @@ export default function CreateCompany (props) {
   };
 
   return (
-    <div>
+    <div className="insertNew">
       CNPJ: <input placeholder="00.050.000/0001-91" type="text" name="CNPJ" onChange={ handleChange } />
       Nome: <input placeholder="Banco Bradesco" type="text" name="name" onChange={ handleChange } />
       E-mail: <input placeholder="bradesco@bradesco.com.br" type="text" name="email" onChange={ handleChange } />
