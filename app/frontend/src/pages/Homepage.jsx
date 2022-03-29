@@ -11,10 +11,12 @@ export default function Homepage() {
 
   return (
     <div className="homepage">
-      <h1>Empresas</h1>
-      <Link to="/create-company">
-        <button type="button"> Criar nova empresa </button>
-      </Link>
+      <div className="centerTitles">
+        <h1>Empresas</h1>
+        <Link to="/create-company">
+          <button type="button"> Criar nova empresa </button>
+        </Link>
+      </div>
       <div className="empresas">
         { companies.map((company) => <Companies company={ company } employees={ employees } /> ) }
       </div>

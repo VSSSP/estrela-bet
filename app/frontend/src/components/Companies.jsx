@@ -7,13 +7,15 @@ export default function Companies ({ company, employees }) {
 
   return (
     <div className="cardEmpresa">
-      <Link className="titleEmpresa" to={`/company/${company.id}`}>
-        <h1>{ company.name }</h1>
-      </Link>
-      {/* dados do colaborador: */}
-      <Link to={`/create-employee/${company.id}` }>
-        <button type="button"> Inserir novo colaborador </button>
-      </Link>
+      <div className="centerTitles">
+        <Link className="titleEmpresa" to={`/company/${company.id}`}>
+          <h1>{ company.name }</h1>
+        </Link>
+        {/* dados do colaborador: */}
+        <Link to={`/create-employee/${company.id}` }>
+          <button type="button"> Inserir novo colaborador </button>
+        </Link>
+      </div>
       <h3>Colaboradores:</h3>
       { employeesByCompany.length === 0 ? <p> Nenhum colaborador cadastrado</p> : null }
       { employeesByCompany.map((employee) => <Employees key={ employee.id } employee={ employee } /> ) }
