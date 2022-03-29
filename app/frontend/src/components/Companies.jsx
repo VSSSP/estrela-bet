@@ -7,7 +7,9 @@ export default function Companies ({ company, employees }) {
 
   return (
     <div>
-      <h1>{ company.name }</h1>
+      <Link to={`/company/${company.id}`}>
+        <h1>{ company.name }</h1>
+      </Link>
       {/* dados do colaborador: */}
       <h3>Colaboradores:</h3>
       { employeesByCompany.length === 0 ? <p> Nenhum colaborador cadastrado</p> : null }
