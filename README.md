@@ -55,7 +55,7 @@ Caso a rota seja /company:
 	"CNPJ": "00.000.000/0001-91",
 	"name": "Banco do Brasil",
 	"email": "bdb@banco.com",
-	"phone": "40044500",
+	"phone": "(31)40044500",
 	"address": "Rua do banco, 123"
 }
 ```
