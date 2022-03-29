@@ -11,7 +11,7 @@ Iniciar o docker: `sudo service docker start`
 
 Ir para a pasta raiz: `cd estrela-bet`
 
-Instalar dependencias (frontend e backend): `npm run install:apps`
+Instalar dependencias: `npm run install:apps`
 
 Via docker, iniciar banco de dados, backend e frontend: `npm run compose:up`
 
